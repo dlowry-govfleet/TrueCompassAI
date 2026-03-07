@@ -200,12 +200,13 @@ a:hover {
 }
 
 .logo-img {
-    height: 48px;
+    height: 80px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .navbar.scrolled .logo-img {
-    height: 40px;
+    height: 64px;
 }
 
 .nav-links {
@@ -593,76 +594,18 @@ a:hover {
     align-items: center;
 }
 
-.app-mockup {
-    width: 220px;
-    height: 300px;
-    background: var(--color-bg);
-    border-radius: 20px;
-    border: 2px solid var(--color-border);
-    padding: 16px;
-    transform: perspective(600px) rotateY(-5deg);
+.portfolio-screenshot {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
+    transform: perspective(600px) rotateY(-3deg);
 }
 
-.portfolio-card:hover .app-mockup {
+.portfolio-card:hover .portfolio-screenshot {
     transform: perspective(600px) rotateY(0deg);
-}
-
-.mockup-header {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    margin-bottom: 16px;
-    text-align: center;
-}
-
-.mockup-bar {
-    height: 8px;
-    background: var(--color-border);
-    border-radius: 4px;
-    margin-bottom: 8px;
-}
-
-.mockup-bar.short {
-    width: 60%;
-}
-
-.mockup-map {
-    height: 140px;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(249, 115, 22, 0.1));
-    border-radius: 8px;
-    margin-top: 16px;
-    position: relative;
-    overflow: hidden;
-}
-
-.mockup-map::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 21px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.03) 20px, rgba(255,255,255,0.03) 21px);
-}
-
-.mockup-skeleton {
-    height: 160px;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(249, 115, 22, 0.1));
-    border-radius: 8px;
-    margin-top: 16px;
-    position: relative;
-}
-
-.mockup-skeleton::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 80px;
-    border: 2px solid rgba(14, 165, 233, 0.4);
-    border-radius: 8px;
+    box-shadow: 0 12px 48px rgba(14, 165, 233, 0.15);
 }
 
 /* ============================================
@@ -839,8 +782,9 @@ a:hover {
 }
 
 .footer-logo {
-    height: 36px;
+    height: 60px;
     margin-bottom: 12px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
