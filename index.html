@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueCompass.AI — Advancing AI Solutions</title>
+    <meta name="description" content="TrueCompass.AI turns your ideas into reality with AI. Custom AI applications for people and businesses, built hand-in-hand with you.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo.png" alt="TrueCompass.AI Logo" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#contact" class="btn btn-nav">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-tagline">Advancing AI Solutions</p>
+                <h1>Your Ideas.<br><span class="gradient-text">Powered by AI.</span><br>Made Real.</h1>
+                <p class="hero-description">We partner with everyday people and businesses to transform bold ideas into powerful AI-driven applications. No idea is too big — we build it with you, for you.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                    <a href="#portfolio" class="btn btn-outline">See Our Work</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="compass-animation">
+                    <svg viewBox="0 0 300 300" class="compass-svg">
+                        <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <circle cx="150" cy="150" r="80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <!-- Compass cardinal points -->
+                        <text x="150" y="25" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="14" font-family="Space Grotesk">N</text>
+                        <text x="280" y="155" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="14" font-family="Space Grotesk">E</text>
+                        <text x="150" y="290" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="14" font-family="Space Grotesk">S</text>
+                        <text x="20" y="155" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="14" font-family="Space Grotesk">W</text>
+                        <!-- Compass needle -->
+                        <g class="compass-needle">
+                            <polygon points="150,30 158,150 142,150" fill="url(#needleGradient)" opacity="0.9"/>
+                            <polygon points="150,270 158,150 142,150" fill="rgba(255,255,255,0.2)"/>
+                        </g>
+                        <circle cx="150" cy="150" r="6" fill="#0ea5e9"/>
+                        <defs>
+                            <linearGradient id="needleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/headshot.png" alt="David Lowry — Founder of TrueCompass.AI">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <p class="section-label">About</p>
+                    <h2>Guiding Your Vision with AI</h2>
+                    <p class="about-lead">I'm <strong>David Lowry</strong>, founder of TrueCompass.AI, based in Ben Wheeler, Texas. I'm passionate about one thing: helping ordinary people and businesses bring their ideas to life through AI.</p>
+                    <p>I've spent years mastering cutting-edge AI tools — from Claude and ElevenLabs to Google Cloud, Firebase, D-ID, and beyond — to build applications that are intuitive, powerful, and purpose-built for real people.</p>
+                    <p>I don't just build for you. I build <em>with</em> you. Every project is a true partnership, where your vision drives everything and AI makes the impossible possible.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">AI-First</span>
+                            <span class="stat-label">Development Approach</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">AI Platforms Mastered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Partnership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Services</p>
+                <h2>From Concept to Launch</h2>
+                <p class="section-subtitle">We leverage the most powerful AI tools available to build applications that solve real problems for real people.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="8" stroke="currentColor" stroke-width="2"/><path d="M18 20l4 4-4 4M26 28h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Custom AI Applications</h3>
+                    <p>Purpose-built mobile and web applications powered by AI that solve your unique challenges. From concept to App Store — we handle it all.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Not sure where to start? We help you identify where AI can make the biggest impact in your business and chart the course to get there.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><path d="M12 36V24l12-12 12 12v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 36v-8h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Business Automation</h3>
+                    <p>Streamline operations with intelligent automation. We integrate AI into your workflows to save time, reduce errors, and scale your business.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><path d="M16 8h16v32H16z" stroke="currentColor" stroke-width="2" rx="3"/><circle cx="24" cy="34" r="2" fill="currentColor"/><path d="M20 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native iOS and Android applications with AI at their core. Beautiful, intuitive interfaces that put powerful technology in everyone's hands.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><path d="M8 16l16-8 16 8v16l-16 8-16-8V16z" stroke="currentColor" stroke-width="2"/><path d="M8 16l16 8 16-8M24 24v16" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <h3>AI Integration & APIs</h3>
+                    <p>Connect the power of Claude, ElevenLabs, Google Cloud, D-ID, Firebase, and more — seamlessly woven into your application stack.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l6 12h14l-11 8 4 14-13-9-13 9 4-14L4 16h14l6-12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Idea-to-Reality Partnerships</h3>
+                    <p>Got a big idea? We work hand-in-hand with you to turn it into a working product. Your vision, our expertise, AI's power — together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Technology</p>
+                <h2>Built with the Best in AI</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <span class="tech-name">Claude AI</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Google Cloud</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Firebase</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">ElevenLabs</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">D-ID</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">React Native</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">MediaPipe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Portfolio</p>
+                <h2>Ideas Made Real</h2>
+                <p class="section-subtitle">A look at the AI-powered applications we've brought to life.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card portfolio-featured">
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-tag">Fleet Management</span>
+                        <h3>GovFleet.AI</h3>
+                        <p>An intelligent fleet management platform that leverages AI to help government agencies and organizations optimize vehicle tracking, maintenance scheduling, and fleet operations — making complex logistics simple and efficient.</p>
+                        <ul class="portfolio-tech">
+                            <li>Claude AI</li>
+                            <li>Google Cloud</li>
+                            <li>Firebase</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual">
+                        <div class="app-mockup fleet">
+                            <div class="mockup-header">GovFleet.AI</div>
+                            <div class="mockup-content">
+                                <div class="mockup-bar"></div>
+                                <div class="mockup-bar short"></div>
+                                <div class="mockup-map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card portfolio-featured">
+                    <div class="portfolio-card-content">
+                        <span class="portfolio-tag">Sports Technology</span>
+                        <h3>ProSwing AI</h3>
+                        <p>A cutting-edge golf swing analysis application that uses AI-powered pose estimation and computer vision to give golfers real-time feedback on their mechanics — putting pro-level coaching technology in everyone's pocket.</p>
+                        <ul class="portfolio-tech">
+                            <li>MediaPipe</li>
+                            <li>Claude AI</li>
+                            <li>React Native</li>
+                            <li>Computer Vision</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-card-visual">
+                        <div class="app-mockup swing">
+                            <div class="mockup-header">ProSwing AI</div>
+                            <div class="mockup-content">
+                                <div class="mockup-bar"></div>
+                                <div class="mockup-skeleton"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="section approach" id="approach">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Our Approach</p>
+                <h2>How We Bring Ideas to Life</h2>
+            </div>
+            <div class="approach-timeline">
+                <div class="approach-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Listen & Discover</h3>
+                        <p>We start with your idea. No matter how rough or refined, we listen deeply to understand your vision, your audience, and what success looks like for you.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Design & Architect</h3>
+                        <p>Together we map out the solution — selecting the right AI tools, designing the user experience, and building a roadmap that turns your idea into a plan.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Build & Iterate</h3>
+                        <p>We develop your application in close partnership with you. You see progress at every step, provide feedback, and shape the product as it comes to life.</p>
+                    </div>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Launch & Grow</h3>
+                        <p>When it's ready, we launch together — and we don't stop there. We continue to support, refine, and evolve your application as your needs grow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Turn Your Idea<br>Into <span class="gradient-text">Reality</span>?</h2>
+                <p>Whether you have a fully formed concept or just a spark of an idea, we're ready to partner with you and bring it to life with AI.</p>
+                <a href="#contact" class="btn btn-primary btn-large">Let's Build Something Amazing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Contact</p>
+                <h2>Let's Talk</h2>
+                <p class="section-subtitle">Ready to explore what AI can do for your idea or business? Reach out — I'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:dlowry@true-compass.ai">dlowry@true-compass.ai</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+12544245232">254.424.5232</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Ben Wheeler, Texas</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Web</h4>
+                            <a href="https://true-compass.ai">true-compass.ai</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="TrueCompass.AI" class="footer-logo">
+                    <p>Advancing AI Solutions — turning ideas into reality for people and businesses everywhere.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TrueCompass.AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

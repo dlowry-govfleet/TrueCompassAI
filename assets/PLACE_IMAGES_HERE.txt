@@ -1,0 +1,5 @@
+Place the following image files in this folder:
+
+1. logo.png      - The TrueCompass.AI logo (compass with teal/orange arrow)
+2. headshot.png   - David Lowry headshot photo
+3. favicon.png    - A small version of the logo for the browser tab (optional)
