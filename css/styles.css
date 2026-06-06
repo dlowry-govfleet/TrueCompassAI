@@ -177,7 +177,7 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 12px 0;
     transition: var(--transition);
 }
 
@@ -200,7 +200,7 @@ a:hover {
 }
 
 .logo-img {
-    height: 140px;
+    height: 80px;
     width: auto;
     filter: brightness(0) invert(1);
 }
