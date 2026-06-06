@@ -3,25 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GovFleet.AI — Case Study | TrueCompass.AI</title>
-<meta name="description" content="How TrueCompass.AI built GovFleet.AI, a Claude-powered CRM purpose-built for government fleet dealers, with a custom Model Context Protocol server that lets a sales team query its entire operation in plain language.">
+<title>GovFleet.AI — Case Study | True-Compass.AI</title>
+<meta name="description" content="How True-Compass.AI built GovFleet.AI, a Claude-powered CRM purpose-built for government fleet dealers, with a custom Model Context Protocol server that lets a sales team query its entire operation in plain language.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0B0E13;
-    --bg-2:#0E1219;
-    --surface:#141A23;
-    --surface-2:#19212C;
-    --ink:#ECE8E1;
-    --muted:#9AA4B2;
-    --faint:#5C6675;
-    --line:rgba(236,232,225,0.09);
-    --line-strong:rgba(236,232,225,0.16);
-    --brass:#D4A23C;
-    --brass-soft:rgba(212,162,60,0.14);
-    --teal:#6FA89F;
+    /* Palette aligned to the homepage brand (sky + orange on navy).
+       Token names kept (--brass/--teal) to avoid churn across usages. */
+    --bg:#0a0e1a;
+    --bg-2:#111827;
+    --surface:#1a2035;
+    --surface-2:#232c46;
+    --ink:#f1f5f9;
+    --muted:#94a3b8;
+    --faint:#64748b;
+    --line:rgba(255,255,255,0.08);
+    --line-strong:rgba(255,255,255,0.14);
+    --brass:#0ea5e9;
+    --brass-soft:rgba(14,165,233,0.14);
+    --teal:#f97316;
     --radius:14px;
     --maxw:1080px;
   }
@@ -41,8 +43,8 @@
     content:"";
     position:fixed;inset:0;z-index:-2;
     background:
-      radial-gradient(900px 600px at 78% -8%, rgba(212,162,60,0.10), transparent 60%),
-      radial-gradient(800px 700px at 8% 100%, rgba(111,168,159,0.07), transparent 55%),
+      radial-gradient(900px 600px at 78% -8%, rgba(14,165,233,0.10), transparent 60%),
+      radial-gradient(800px 700px at 8% 100%, rgba(249,115,22,0.07), transparent 55%),
       linear-gradient(180deg,var(--bg),var(--bg-2));
   }
   body::after{
@@ -57,8 +59,8 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:26px 0;
   }
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:0.01em}
-  .brand .rose{width:26px;height:26px;flex:0 0 auto}
+  .brand{display:inline-flex;align-items:center;text-decoration:none}
+  .brand-logo{height:100px;width:auto;display:block;filter:brightness(0) invert(1)}
   .topbar nav{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);text-decoration:none}
   .topbar nav:hover{color:var(--brass)}
 
@@ -81,7 +83,7 @@
     color:var(--ink);border:1px solid var(--line-strong);border-radius:100px;
     padding:7px 15px;background:rgba(255,255,255,0.02);
   }
-  .tag.lead{border-color:rgba(212,162,60,0.5);color:var(--brass);background:var(--brass-soft)}
+  .tag.lead{border-color:rgba(14,165,233,0.5);color:var(--brass);background:var(--brass-soft)}
 
   /* compass rose decoration */
   .compass-deco{
@@ -192,7 +194,7 @@
     background:var(--brass);color:var(--bg);text-decoration:none;font-weight:500;
     padding:15px 30px;border-radius:100px;transition:transform .25s,box-shadow .25s;
   }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(212,162,60,0.28)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(14,165,233,0.28)}
 
   footer{border-top:1px solid var(--line);padding:34px 0;margin-top:30px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
@@ -212,15 +214,9 @@
 
 <div class="wrap">
   <div class="topbar">
-    <div class="brand">
-      <svg class="rose" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="46" stroke="#D4A23C" stroke-width="2"/>
-        <path d="M50 6 L57 50 L50 94 L43 50 Z" fill="#D4A23C"/>
-        <path d="M6 50 L50 43 L94 50 L50 57 Z" fill="#9AA4B2"/>
-        <circle cx="50" cy="50" r="4" fill="#0B0E13" stroke="#D4A23C" stroke-width="2"/>
-      </svg>
-      TrueCompass.AI
-    </div>
+    <a class="brand" href="https://true-compass.ai">
+      <img class="brand-logo" src="../../assets/logo.png" alt="True-Compass.AI">
+    </a>
     <a href="https://true-compass.ai">true-compass.ai →</a>
   </div>
 </div>
@@ -228,18 +224,18 @@
 <header class="hero">
   <div class="wrap" style="position:relative">
     <svg class="compass-deco" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="96" stroke="#D4A23C" stroke-width="1"/>
-      <circle cx="100" cy="100" r="70" stroke="#D4A23C" stroke-width="0.5"/>
-      <path d="M100 12 L110 100 L100 188 L90 100 Z" fill="#D4A23C"/>
-      <path d="M12 100 L100 90 L188 100 L100 110 Z" fill="#6FA89F"/>
-      <text x="100" y="34" fill="#ECE8E1" font-size="11" text-anchor="middle" font-family="monospace">N</text>
-      <text x="172" y="104" fill="#9AA4B2" font-size="11" text-anchor="middle" font-family="monospace">E</text>
-      <text x="100" y="176" fill="#9AA4B2" font-size="11" text-anchor="middle" font-family="monospace">S</text>
-      <text x="28" y="104" fill="#9AA4B2" font-size="11" text-anchor="middle" font-family="monospace">W</text>
+      <circle cx="100" cy="100" r="96" stroke="#0ea5e9" stroke-width="1"/>
+      <circle cx="100" cy="100" r="70" stroke="#0ea5e9" stroke-width="0.5"/>
+      <path d="M100 12 L110 100 L100 188 L90 100 Z" fill="#0ea5e9"/>
+      <path d="M12 100 L100 90 L188 100 L100 110 Z" fill="#f97316"/>
+      <text x="100" y="34" fill="#f1f5f9" font-size="11" text-anchor="middle" font-family="monospace">N</text>
+      <text x="172" y="104" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">E</text>
+      <text x="100" y="176" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">S</text>
+      <text x="28" y="104" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">W</text>
     </svg>
     <div class="eyebrow reveal">Case Study · Government Fleet</div>
     <h1 class="reveal">GovFleet.AI: an entire fleet operation, <em>answerable in plain language</em></h1>
-    <p class="lede reveal">How TrueCompass.AI built a purpose-built CRM for a niche the big platforms ignore — and wired Claude into the heart of it through a custom Model Context Protocol server, so the team can ask its business a question instead of hunting for the answer.</p>
+    <p class="lede reveal">How True-Compass.AI built a purpose-built CRM for a niche the big platforms ignore — and wired Claude into the heart of it through a custom Model Context Protocol server, so the team can ask its business a question instead of hunting for the answer.</p>
     <div class="tags reveal">
       <span class="tag lead">Claude</span>
       <span class="tag">Model Context Protocol</span>
@@ -272,7 +268,7 @@
   <div class="wrap reveal">
     <div class="marker"><span class="card">E</span><span class="label">The Solution</span></div>
     <h2>A CRM built for the niche — with Claude as its conversational core</h2>
-    <p>TrueCompass.AI built <span class="hl">GovFleet.AI</span> from the ground up for government fleet dealers: a system that speaks the language of customers, quotes, orders, deliveries, inventory, and receivables the way this business actually works. But the differentiator isn't the data model. It's that the whole operation became <strong>something you can simply ask.</strong></p>
+    <p>True-Compass.AI built <span class="hl">GovFleet.AI</span> from the ground up for government fleet dealers: a system that speaks the language of customers, quotes, orders, deliveries, inventory, and receivables the way this business actually works. But the differentiator isn't the data model. It's that the whole operation became <strong>something you can simply ask.</strong></p>
     <p>We built a custom <strong>Model Context Protocol (MCP) server</strong> on Firebase Cloud Functions that exposes the CRM's live data to Claude through purpose-designed, access-scoped tools. Instead of clicking through reports, the team asks Claude — and Claude reaches into the real system to answer.</p>
     <div class="features">
       <div class="feature">
@@ -339,7 +335,7 @@
       <div class="bar"></div>
       <div>
         <p class="q">"I spent 29 years in law enforcement and then in government fleet sales — I knew exactly where this business loses time. The goal with GovFleet.AI wasn't to add AI for its own sake. It was to make the whole operation answerable. Now you ask it a question, and Claude reaches into the real system and tells you. That's the difference between software that stores your work and software that does it with you."</p>
-        <div class="who">David Lowry<span>Founder, TrueCompass.AI</span></div>
+        <div class="who">David Lowry<span>Founder, True-Compass.AI</span></div>
       </div>
     </div>
   </div>
@@ -354,7 +350,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="f-brand">TrueCompass.AI</div>
+    <div class="f-brand">True-Compass.AI</div>
     <div class="f-meta">Advancing AI Solutions · Ben Wheeler, Texas</div>
   </div>
 </footer>

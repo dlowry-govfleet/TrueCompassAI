@@ -1,6 +1,6 @@
-# TrueCompass.AI — Project Guide
+# True-Compass.AI — Project Guide
 
-Marketing website for **TrueCompass.AI**, an AI consulting/app-development studio
+Marketing website for **True-Compass.AI**, an AI consulting/app-development studio
 (founder: David Lowry, Ben Wheeler, Texas). Static site, no framework, no build step.
 
 - **Live site:** https://true-compass.ai (note the hyphen) — also https://truecompass-ai.web.app
