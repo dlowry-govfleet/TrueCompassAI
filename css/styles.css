@@ -549,7 +549,7 @@ a:hover {
 
 .portfolio-featured {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
 }
 
@@ -614,8 +614,14 @@ a:hover {
     align-items: center;
 }
 
+/* height:auto is load-bearing. The width/height attributes on these <img>
+   tags map to presentational hints; width:100% overrides the width hint but
+   the height hint survives, pinning the image to its pixel height and
+   stretching it vertically. Setting height:auto restores the intrinsic
+   aspect ratio while keeping the attributes' layout-shift protection. */
 .portfolio-screenshot {
     width: 100%;
+    height: auto;
     border-radius: 12px;
     border: 1px solid var(--color-border);
     box-shadow: 0 8px 28px rgba(22, 40, 60, 0.14);
