@@ -2,25 +2,28 @@
    TrueCompass.AI — Styles
    ============================================ */
 
+/* Palette is taken from the logo, which is a light-background mark: navy
+   wordmark, teal compass ring, amber needle. Contrast on --color-bg:
+   heading 14.3:1, text 8.7:1, muted 5.2:1, primary 4.8:1 — all AA body.
+   --color-accent is 2.3:1 and is for large type, borders, and fills behind
+   dark text ONLY. Use --color-accent-dark (4.6:1) for small amber text. */
 :root {
-    --color-bg: #0a0e1a;
-    --color-bg-light: #111827;
-    --color-bg-card: #1a2035;
-    --color-text: #e2e8f0;
-    --color-text-muted: #94a3b8;
-    --color-text-heading: #f1f5f9;
-    --color-primary: #0ea5e9;
-    --color-primary-dark: #0284c7;
-    --color-accent: #f97316;
-    --color-accent-dark: #ea580c;
-    --color-border: rgba(255, 255, 255, 0.08);
-    --gradient-primary: linear-gradient(135deg, #0ea5e9, #f97316);
-    --gradient-bg: linear-gradient(180deg, #0a0e1a 0%, #111827 100%);
+    --color-bg: #FBFAF8;
+    --color-bg-light: #F7F5F2;
+    --color-bg-card: #FFFFFF;
+    --color-text: #3C4A57;
+    --color-text-muted: #5C6B7A;
+    --color-text-heading: #16283C;
+    --color-primary: #1F7A8C;
+    --color-primary-dark: #16606F;
+    --color-accent: #E8952B;
+    --color-accent-dark: #A8620D;
+    --color-border: rgba(22, 40, 60, 0.12);
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-heading: 'Space Grotesk', 'Inter', sans-serif;
     --radius: 12px;
     --radius-lg: 20px;
-    --shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --shadow: 0 4px 30px rgba(22, 40, 60, 0.08);
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -65,10 +68,7 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); }
 h3 { font-size: 1.35rem; }
 
 .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primary);
 }
 
 .section-label {
@@ -124,21 +124,22 @@ a:hover {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: var(--color-primary);
     color: #fff;
-    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+    box-shadow: 0 2px 12px rgba(31, 122, 140, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.4);
+    background: var(--color-primary-dark);
+    box-shadow: 0 6px 20px rgba(31, 122, 140, 0.28);
     color: #fff;
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--color-text);
-    border: 2px solid var(--color-border);
+    color: var(--color-text-heading);
+    border: 2px solid rgba(22, 40, 60, 0.18);
 }
 
 .btn-outline:hover {
@@ -146,11 +147,20 @@ a:hover {
     color: var(--color-primary);
 }
 
-.btn-nav {
+/* Scoped to .nav-links because `.nav-links a` (0-1-1) otherwise outranks
+   `.btn-nav` (0-1-0) and paints the label in the muted body color. */
+.btn-nav,
+.nav-links a.btn-nav {
     padding: 10px 24px;
-    background: var(--gradient-primary);
+    background: var(--color-primary);
     color: #fff;
     font-size: 0.85rem;
+}
+
+.btn-nav:hover,
+.nav-links a.btn-nav:hover {
+    background: var(--color-primary-dark);
+    color: #fff;
 }
 
 .btn-nav:hover {
@@ -182,7 +192,7 @@ a:hover {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 14, 26, 0.95);
+    background: rgba(251, 250, 248, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-border);
@@ -199,10 +209,10 @@ a:hover {
     align-items: center;
 }
 
+/* The logo is a light-background mark — no invert filter on a light theme. */
 .logo-img {
     height: 80px;
     width: auto;
-    filter: brightness(0) invert(1);
 }
 
 .nav-links {
@@ -258,8 +268,8 @@ a:hover {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 30% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
+    background: radial-gradient(ellipse at 30% 50%, rgba(31, 122, 140, 0.07) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(232, 149, 43, 0.07) 0%, transparent 60%),
                 var(--color-bg);
 }
 
@@ -458,8 +468,8 @@ a:hover {
 
 .service-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(14, 165, 233, 0.3);
-    box-shadow: 0 12px 40px rgba(14, 165, 233, 0.1);
+    border-color: rgba(31, 122, 140, 0.35);
+    box-shadow: 0 12px 32px rgba(22, 40, 60, 0.10);
 }
 
 .service-icon {
@@ -505,7 +515,7 @@ a:hover {
 
 .tech-item:hover {
     border-color: var(--color-primary);
-    background: rgba(14, 165, 233, 0.05);
+    background: rgba(31, 122, 140, 0.06);
 }
 
 .tech-name {
@@ -533,8 +543,8 @@ a:hover {
 }
 
 .portfolio-card:hover {
-    border-color: rgba(14, 165, 233, 0.3);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(31, 122, 140, 0.35);
+    box-shadow: 0 12px 32px rgba(22, 40, 60, 0.10);
 }
 
 .portfolio-featured {
@@ -553,7 +563,7 @@ a:hover {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--color-accent);
+    color: var(--color-accent-dark);
 }
 
 .portfolio-card h3 {
@@ -575,8 +585,8 @@ a:hover {
 }
 
 .portfolio-tech li {
-    background: rgba(14, 165, 233, 0.1);
-    color: var(--color-primary);
+    background: rgba(31, 122, 140, 0.09);
+    color: var(--color-primary-dark);
     font-size: 0.8rem;
     font-weight: 500;
     padding: 6px 14px;
@@ -608,14 +618,14 @@ a:hover {
     width: 100%;
     border-radius: 12px;
     border: 1px solid var(--color-border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 28px rgba(22, 40, 60, 0.14);
     transition: var(--transition);
-    transform: perspective(600px) rotateY(-3deg);
 }
 
+/* No 3D tilt. These are real product screenshots and their job is to look
+   real — a rotateY skews the type and makes them read as mockups. */
 .portfolio-card:hover .portfolio-screenshot {
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 12px 48px rgba(14, 165, 233, 0.15);
+    box-shadow: 0 12px 36px rgba(22, 40, 60, 0.18);
 }
 
 /* Link row — .portfolio-link carries its own margin-top, so the row owns the
@@ -737,14 +747,12 @@ a:hover {
     border-bottom: none;
 }
 
+/* Large display type, so --color-accent is allowed here. */
 .step-number {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 800;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-accent);
     min-width: 80px;
 }
 
@@ -762,7 +770,7 @@ a:hover {
    ============================================ */
 
 .cta-section {
-    background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.08) 0%, transparent 70%),
+    background: radial-gradient(ellipse at center, rgba(31, 122, 140, 0.08) 0%, transparent 70%),
                 var(--color-bg);
 }
 
@@ -808,7 +816,7 @@ a:hover {
     width: 44px;
     height: 44px;
     min-width: 44px;
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(31, 122, 140, 0.09);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -861,7 +869,7 @@ a:hover {
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.18);
 }
 
 .form-group textarea {
@@ -889,7 +897,6 @@ a:hover {
 .footer-logo {
     height: 120px;
     margin-bottom: 12px;
-    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
@@ -1005,7 +1012,7 @@ a:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 14, 26, 0.98);
+        background: rgba(251, 250, 248, 0.98);
         flex-direction: column;
         justify-content: center;
         align-items: center;

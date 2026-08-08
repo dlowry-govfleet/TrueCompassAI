@@ -10,20 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Palette aligned to the homepage brand (sky + orange on navy).
-       Token names kept (--brass/--teal) to avoid churn across usages. */
-    --bg:#0a0e1a;
-    --bg-2:#111827;
-    --surface:#1a2035;
-    --surface-2:#232c46;
-    --ink:#f1f5f9;
-    --muted:#94a3b8;
-    --faint:#64748b;
-    --line:rgba(255,255,255,0.08);
-    --line-strong:rgba(255,255,255,0.14);
-    --brass:#0ea5e9;
-    --brass-soft:rgba(14,165,233,0.14);
-    --teal:#f97316;
+    /* Light palette, matched to the homepage (navy ink, teal, amber) — the
+       logo is a light-background mark. Fonts stay Fraunces/Archivo/JetBrains
+       Mono so this still reads as its own document.
+       Token names kept (--brass/--teal) to avoid churn across usages.
+       Contrast on --bg: ink 14.4:1, muted 7.0:1, faint 5.2:1, brass 4.8:1. */
+    --bg:#FBFAF8;
+    --bg-2:#F7F5F2;
+    --surface:#FFFFFF;
+    --surface-2:#F7F5F1;
+    --ink:#16283C;
+    --muted:#4A5866;
+    --faint:#5E6B77;
+    --line:rgba(22,40,60,0.12);
+    --line-strong:rgba(22,40,60,0.20);
+    --brass:#1F7A8C;
+    --brass-soft:rgba(31,122,140,0.12);
+    --teal:#E8952B;
     --radius:14px;
     --maxw:1080px;
   }
@@ -43,12 +46,13 @@
     content:"";
     position:fixed;inset:0;z-index:-2;
     background:
-      radial-gradient(900px 600px at 78% -8%, rgba(14,165,233,0.10), transparent 60%),
-      radial-gradient(800px 700px at 8% 100%, rgba(249,115,22,0.07), transparent 55%),
+      radial-gradient(900px 600px at 78% -8%, rgba(31,122,140,0.09), transparent 60%),
+      radial-gradient(800px 700px at 8% 100%, rgba(232,149,43,0.08), transparent 55%),
       linear-gradient(180deg,var(--bg),var(--bg-2));
   }
+  /* Grain reads heavier on a light ground than it did on navy. */
   body::after{
-    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.5;
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.3;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
@@ -60,7 +64,7 @@
     padding:26px 0;
   }
   .brand{display:inline-flex;align-items:center;text-decoration:none}
-  .brand-logo{height:100px;width:auto;display:block;filter:brightness(0) invert(1)}
+  .brand-logo{height:100px;width:auto;display:block}
   .topbar nav{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);text-decoration:none}
   .topbar nav:hover{color:var(--brass)}
 
@@ -81,9 +85,9 @@
   .tag{
     font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.04em;
     color:var(--ink);border:1px solid var(--line-strong);border-radius:100px;
-    padding:7px 15px;background:rgba(255,255,255,0.02);
+    padding:7px 15px;background:rgba(22,40,60,0.03);
   }
-  .tag.lead{border-color:rgba(14,165,233,0.5);color:var(--brass);background:var(--brass-soft)}
+  .tag.lead{border-color:rgba(31,122,140,0.45);color:var(--brass);background:var(--brass-soft)}
 
   /* compass rose decoration */
   .compass-deco{
@@ -191,10 +195,10 @@
   .cta h2{margin:0 auto 28px;max-width:18ch}
   .btn{
     display:inline-block;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.04em;
-    background:var(--brass);color:var(--bg);text-decoration:none;font-weight:500;
+    background:var(--brass);color:#fff;text-decoration:none;font-weight:500;
     padding:15px 30px;border-radius:100px;transition:transform .25s,box-shadow .25s;
   }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(14,165,233,0.28)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(31,122,140,0.26)}
 
   footer{border-top:1px solid var(--line);padding:34px 0;margin-top:30px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
@@ -224,14 +228,14 @@
 <header class="hero">
   <div class="wrap" style="position:relative">
     <svg class="compass-deco" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="96" stroke="#0ea5e9" stroke-width="1"/>
-      <circle cx="100" cy="100" r="70" stroke="#0ea5e9" stroke-width="0.5"/>
-      <path d="M100 12 L110 100 L100 188 L90 100 Z" fill="#0ea5e9"/>
-      <path d="M12 100 L100 90 L188 100 L100 110 Z" fill="#f97316"/>
-      <text x="100" y="34" fill="#f1f5f9" font-size="11" text-anchor="middle" font-family="monospace">N</text>
-      <text x="172" y="104" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">E</text>
-      <text x="100" y="176" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">S</text>
-      <text x="28" y="104" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">W</text>
+      <circle cx="100" cy="100" r="96" stroke="#1F7A8C" stroke-width="1"/>
+      <circle cx="100" cy="100" r="70" stroke="#1F7A8C" stroke-width="0.5"/>
+      <path d="M100 12 L110 100 L100 188 L90 100 Z" fill="#1F7A8C"/>
+      <path d="M12 100 L100 90 L188 100 L100 110 Z" fill="#E8952B"/>
+      <text x="100" y="34" fill="#16283C" font-size="11" text-anchor="middle" font-family="monospace">N</text>
+      <text x="172" y="104" fill="#4A5866" font-size="11" text-anchor="middle" font-family="monospace">E</text>
+      <text x="100" y="176" fill="#4A5866" font-size="11" text-anchor="middle" font-family="monospace">S</text>
+      <text x="28" y="104" fill="#4A5866" font-size="11" text-anchor="middle" font-family="monospace">W</text>
     </svg>
     <div class="eyebrow reveal">Case Study · Government Fleet</div>
     <h1 class="reveal">GovFleet.AI: an entire fleet operation, <em>answerable in plain language</em></h1>
