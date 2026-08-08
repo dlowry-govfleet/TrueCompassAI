@@ -525,6 +525,14 @@ a:hover {
     color: var(--color-text);
 }
 
+.tech-note {
+    max-width: 640px;
+    margin: 36px auto 0;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
 /* ============================================
    Portfolio
    ============================================ */
